@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import Styles from '../styles/index.module.css'
 
+const domain = "CHANGE THIS"
+const string = "CHANGE THIS"
+
 export default function Home({data}) {
   return (
     <>
@@ -34,7 +37,7 @@ export default function Home({data}) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://api.countapi.xyz/hit/**domain**/**random string**")
+  const res = await fetch(`https://api.countapi.xyz/hit/${domain}/${string}`)
   const data = await res.json()
   return {
     props: {
